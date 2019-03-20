@@ -3,17 +3,16 @@ import {EntityState, createEntityAdapter } from '@ngrx/entity';
 import { Actions , ArticlesActionsTypes, } from '../store/articles-actions';
 
 export const articleAdapter = createEntityAdapter<Article>({
-  selectId: (contact: Article) => contact.id,
-  sortComparer: false
+
 });
 
 
 export interface State extends EntityState<Article> {
- // currentContactId?: number;
+
 }
 
 export const INIT_STATE: State = articleAdapter.getInitialState({
-  // currentContactId: undefined
+
 });
 
 
