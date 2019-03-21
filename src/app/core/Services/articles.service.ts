@@ -18,9 +18,9 @@ export class ArticlesService {
 
   }
 
-  loadArticleId(articleId: number): Observable<Article> {
+  loadArticleId(id: string): Observable<Article> {
     return this.http
-        .get<Article>(`${environment.APIEndpoint}/articles/${articleId}`);
+        .get<Article>(`${environment.APIEndpoint}/articles/${id}`);
 
   }
 
@@ -31,7 +31,7 @@ export class ArticlesService {
 
 
 
-  deleteArticle(id: number): Observable<Article> {
+  deleteArticle(id: string): Observable<Article> {
     return this.http.delete<Article>(`${environment.APIEndpoint}/articles/${id}`);
   }
 

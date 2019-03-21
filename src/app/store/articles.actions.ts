@@ -26,7 +26,7 @@ export class LoadAll implements Action {
 
 export class Load implements Action {
   readonly type = ArticlesActionsTypes.LOAD;
-  constructor(public payload: number) {}
+  constructor(public payload: string) {}
 }
 
 export class Create implements Action {
@@ -37,7 +37,7 @@ export class Create implements Action {
 
 export class Remove implements Action {
   readonly type = ArticlesActionsTypes.REMOVE;
-  constructor(public payload: number) {}
+  constructor(public payload: string) {}
 }
 
 export class LoadAllSuccess implements Action {
@@ -59,7 +59,7 @@ export class CreateSuccess implements Action {
 
 export class RemoveSuccess implements Action {
   readonly type = ArticlesActionsTypes.REMOVE_SUCCESS;
-  constructor(public payload: number) {}
+  constructor(public payload: string) {}
 }
 
 
