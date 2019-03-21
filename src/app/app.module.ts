@@ -10,8 +10,6 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import * as fromRoot from './store';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatSidenavModule} from '@angular/material';
-import {MatListModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { ArticlesIndexViewComponent } from './views/articles-index-view/articles-index-view.component';
 import {AppRoutingModule} from './app-routing.module';
