@@ -6,7 +6,7 @@ import {
   switchMap
 } from 'rxjs/operators';
 
-import * as ArticlesActions from '../store/articles-actions';
+import * as ArticlesActions from './articles.actions';
 import { Actions, Effect, ofType} from '@ngrx/effects';
 import { Article } from '../core/models/articles';
 import { ArticlesService } from '../core/Services/articles.service';
@@ -18,12 +18,11 @@ import { ArticlesService } from '../core/Services/articles.service';
  */
 
 @Injectable()
-export class ContactsEffects {
+export class ArticlesEffects {
 
   @Effect()
   loadAll$ = this.actions$.pipe(
       ofType<ArticlesActions.LoadAll>(ArticlesActions.ArticlesActionsTypes.LOAD_ALL), /* When [Contacts] LOAD ALL action is dispatched */
-      startWith(new ArticlesActions.LoadAll()),
       switchMap(() => this.articlesService.loadArticles().pipe(
         map( articles => new ArticlesActions.LoadAllSuccess(articles) )
       )),
@@ -42,7 +41,7 @@ export class ContactsEffects {
   create$ = this.actions$.pipe(
     ofType<ArticlesActions.Create>(ArticlesActions.ArticlesActionsTypes.CREATE),
     map( action => action.payload),
-    exhaustMap((article) => this.articlesService.createArticle(article).pipe(
+    exhaustMap( article => this.articlesService.createArticle(article).pipe(
       map( (createdArticle: Article) => new ArticlesActions.CreateSuccess(createdArticle)),
     ))
   );
@@ -51,8 +50,7 @@ export class ContactsEffects {
   destroy$ = this.actions$.pipe(
     ofType<ArticlesActions.Remove>(ArticlesActions.ArticlesActionsTypes.REMOVE),
     map( action => action.payload ),
-    switchMap(
-      id => this.articlesService.deleteArticle(id).pipe(
+    switchMap( id => this.articlesService.deleteArticle(id).pipe(
         map( () => new ArticlesActions.RemoveSuccess(id))
       )
     )

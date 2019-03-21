@@ -2,32 +2,33 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
-import { reducer } from './store/reducer/comment-reducer';
-// import { NewsApiService } from './news-api.service';
+import { reducer } from './store/articles.reducer';
+
+import { EffectsModule, Actions} from '@ngrx/effects';
+import { ArticlesEffects } from './store/articles.effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import * as fromRoot from './store';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatSidenavModule} from '@angular/material';
 import {MatListModule } from '@angular/material';
 import { AppComponent } from './app.component';
-import { CreateCommentComponent } from './core/components/create-comment/create-comment.component';
-
+import { ArticlesIndexViewComponent } from './views/articles-index-view/articles-index-view.component';
+import {AppRoutingModule} from './app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
-    CreateCommentComponent
+    ArticlesIndexViewComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatButtonModule,
-    MatMenuModule,
-    MatCardModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatSidenavModule,
-    MatListModule,
-    StoreModule.forRoot({customer: reducer})
+    AppRoutingModule,
+    StoreModule.forRoot(fromRoot.reducers),
+    EffectsModule.forRoot([ArticlesEffects]),
+    StoreDevtoolsModule.instrument(),
+
   ],
   providers: [],
   bootstrap: [AppComponent]

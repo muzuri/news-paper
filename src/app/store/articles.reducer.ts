@@ -1,6 +1,6 @@
 import { Article } from '../core/models/articles';
 import {EntityState, createEntityAdapter } from '@ngrx/entity';
-import { Actions , ArticlesActionsTypes, } from '../store/articles-actions';
+import { Actions , ArticlesActionsTypes, } from './articles.actions';
 
 export const articleAdapter = createEntityAdapter<Article>({
 
@@ -19,25 +19,25 @@ export const INIT_STATE: State = articleAdapter.getInitialState({
 
 export function reducer(
   state: State = INIT_STATE,
-  {type, payload }: Actions
+  action: Actions
 ) {
 
-  switch (type) {
+  switch (action.type) {
 
     case ArticlesActionsTypes.LOAD_ALL_SUCCESS : {
-      return articleAdapter.addAll(payload, state);
+      return articleAdapter.addAll(action.payload, state);
     }
 
 
     case ArticlesActionsTypes.LOAD_SUCCESS : {
-      return articleAdapter.addOne(payload, state);
+      return articleAdapter.addOne(action.payload, state);
       }
     case ArticlesActionsTypes.CREATE_SUCCESS : {
-      return articleAdapter.addOne(payload, state);
+      return articleAdapter.addOne(action.payload, state);
     }
 
     case ArticlesActionsTypes.REMOVE_SUCCESS : {
-      return articleAdapter.removeOne(payload, state);
+      return articleAdapter.removeOne(action.payload, state);
     }
 
     default: return state;
