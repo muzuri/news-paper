@@ -30,16 +30,10 @@ export function reducer(
 
 
     case ArticlesActionsTypes.LOAD_SUCCESS : {
-      return articleAdapter.addOne(payload, {
-        ...state,
-        currentContactId: payload.id
-      });
-    }
-
+      return articleAdapter.addOne(payload, state);
+      }
     case ArticlesActionsTypes.CREATE_SUCCESS : {
-      return articleAdapter.addOne(payload, {
-        ...state
-      });
+      return articleAdapter.addOne(payload, state);
     }
 
     case ArticlesActionsTypes.REMOVE_SUCCESS : {
