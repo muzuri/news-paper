@@ -44,6 +44,3 @@ export function reducer(
 
   }
 }
-// get the selectors
-export const selectArticles = articleAdapter.getSelectors();
-
