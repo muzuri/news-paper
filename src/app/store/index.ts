@@ -12,22 +12,22 @@ export const reducers = {
 
 // const selectArticles = fromArticles.articleAdapter.getSelectors();
 
-export const getArticleFeatureState = createFeatureSelector<State>('articles');
+export const getArticlesState = createFeatureSelector<State, fromArticles.State>('articles');
 
-export const getArticleEntitiesState = createSelector(
-  getArticleFeatureState,
-  state => state.articles
-);
+// export const getArticleEntitiesState = createSelector(
+//   getArticleFeatureState,
+//   state => state.articles
+// );
 
 export const {
-  selectAll: getAllArticle
+  selectAll: getAllArticles
 
-} = fromArticles.articleAdapter.getSelectors(getArticleEntitiesState);
+} = fromArticles.articleAdapter.getSelectors(getArticlesState);
 
-export const getAllArticles = createSelector(
-  getArticleFeatureState,
-  getAllArticle
-);
+// export const getAllArticles = createSelector(
+//   getArticlesState,
+//   getAllArticle
+// );
 
 
 
