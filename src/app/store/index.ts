@@ -10,24 +10,12 @@ export const reducers = {
   // more reducer here
 };
 
-// const selectArticles = fromArticles.articleAdapter.getSelectors();
 
-export const getArticleFeatureState = createFeatureSelector<State>('articles');
-
-export const getArticleEntitiesState = createSelector(
-  getArticleFeatureState,
-  state => state.articles
-);
+export const getArticlesState = createFeatureSelector<State, fromArticles.State>('articles');
 
 export const {
-  selectAll: getAllArticle
-
-} = fromArticles.articleAdapter.getSelectors(getArticleEntitiesState);
-
-export const getAllArticles = createSelector(
-  getArticleFeatureState,
-  getAllArticle
-);
+  selectAll: getAllArticles
+} = fromArticles.articleAdapter.getSelectors(getArticlesState);
 
 
 
