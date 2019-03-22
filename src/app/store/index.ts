@@ -25,7 +25,7 @@ export const {
 } = fromArticles.articleAdapter.getSelectors(getArticleEntitiesState);
 
 export const getAllArticles = createSelector(
-  getArticleEntitiesState,
+  getArticleFeatureState,
   getAllArticle
 );
 
