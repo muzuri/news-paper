@@ -7,7 +7,18 @@ export interface State {
 
 export const reducers = {
   articles: fromArticles.reducer
+  // more reducer here
 };
 
-const getArticleFeatureState = createFeatureSelector<fromArticles.State>('article');
+const selectArticles = fromArticles.articleAdapter.getSelectors();
+
+export const getArticleFeatureState = createFeatureSelector<fromArticles.State>('articles');
+
+export const getAllArticles = createSelector(
+  getArticleFeatureState,
+  selectArticles
+);
+
+
+
 
