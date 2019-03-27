@@ -20,7 +20,7 @@ export class ArticlesIndexViewComponent implements OnInit {
 
   ngOnInit() {
      this.store.dispatch(new articlesActions.LoadAll());
-     this.articles$ = this.store.pipe(select(fromRoot.getAllArticles)),
+     this.articles$ = this.store.pipe(select(fromRoot.getArtcileById(1))),
     tap(console.log);
 
      // console.log(this.articles$);

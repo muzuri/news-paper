@@ -14,15 +14,20 @@ export const reducers = {
 
 export const getArticlesState = createFeatureSelector<State, fromArticles.State>('articles');
 
-// export const getArticleEntitiesState = createSelector(
-//   getArticleFeatureState,
-//   state => state.articles
-// );
+export const getArticleEntitiesState = createSelector(
+  getArticlesState,
+  state => state.entities
+   );
+export const getArtcileById = (id: number) => createSelector(
+    getArticlesState,
+    getArticleEntitiesState,
+     (entities) => entities[id]);
 
 export const {
   selectAll: getAllArticles
 
 } = fromArticles.articleAdapter.getSelectors(getArticlesState);
+
 
 // export const getAllArticles = createSelector(
 //   getArticlesState,

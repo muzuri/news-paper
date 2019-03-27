@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { reducer } from './store/articles.reducer';
+import {MatListModule, MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule} from '@angular/material';
 
 import { EffectsModule, Actions} from '@ngrx/effects';
 import { ArticlesEffects } from './store/articles.effects';
@@ -22,6 +23,12 @@ import {AppRoutingModule} from './app-routing.module';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatListModule,
     AppRoutingModule,
     StoreModule.forRoot(fromRoot.reducers),
     EffectsModule.forRoot([ArticlesEffects]),
