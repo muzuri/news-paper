@@ -9,11 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
 
 
-constructor() {
-  console.log('app component constructor called');
-}
+  constructor() {
+    console.log('app component constructor called');
+  }
 
-ngOnInit() {
-}
+  ngOnInit() {
+  }
 
 }

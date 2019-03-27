@@ -1,14 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import * as fromRoot from '../../store';
 import {Store, select} from '@ngrx/store';
 import * as articlesActions from '../../store/articles.actions';
 import { Observable } from 'rxjs';
 import {Article } from '../../core/models/articles';
-import * as frmIndex from '../../store';
-import {tap } from 'rxjs/operators';
-
-
-
+import * as fromRoot from '../../store';
+import { tap } from 'rxjs/operators';
 @Component({
   selector: 'app-articles-index-view',
   templateUrl: './articles-index-view.component.html',
