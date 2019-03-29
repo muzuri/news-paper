@@ -13,22 +13,15 @@ export const reducers = {
 
 export const getArticlesState = createFeatureSelector<State, fromArticles.State>('articles');
 
-export const getArticleEntitiesState = createSelector(
-  getArticlesState,
-  state => state.entities
-   );
-export const getArtcileById = (id: number) => createSelector(
-    getArticlesState,
-    getArticleEntitiesState,
-     (entities) => entities[id]);
-
 export const {
   selectAll: getAllArticles
 
 } = fromArticles.articleAdapter.getSelectors(getArticlesState);
 
 
-
+export const getArtcileById = (id: string) => createSelector(
+  getArticlesState,
+  fromArticles.getArticleById(id));
 
 
 
