@@ -17,10 +17,9 @@ export class ArticlesIndexViewComponent implements OnInit {
 
   ngOnInit() {
     this.store.dispatch(new articlesActions.LoadAll());
-    this.articles$ = this.store.pipe(select(fromRoot.getAllArticles)),
-      tap(console.log);
+    this.articles$ = this.store.pipe(select(fromRoot.getAllArticles));
 
-    this.article1$ = this.store.pipe(select(fromRoot.getArtcileById('1'))).subscribe(article => console.log(article));
+    this.article1$ = this.store.pipe(select(fromRoot.getArtcileById('1')));
     //   });
     // }
 
