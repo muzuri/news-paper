@@ -1,18 +1,15 @@
 import { Article } from '../core/models/articles';
-import {EntityState, createEntityAdapter } from '@ngrx/entity';
-import { Actions , ArticlesActionsTypes, } from './articles.actions';
-
+import { EntityState, createEntityAdapter } from '@ngrx/entity';
+import { Actions, ArticlesActionsTypes, } from './articles.actions';
 export const articleAdapter = createEntityAdapter<Article>({
 
 });
 
 
 export interface State extends EntityState<Article> {
-
 }
 
 export const INIT_STATE: State = articleAdapter.getInitialState({
-
 });
 
 
@@ -24,19 +21,19 @@ export function reducer(
 
   switch (action.type) {
 
-    case ArticlesActionsTypes.LOAD_ALL_SUCCESS : {
+    case ArticlesActionsTypes.LOAD_ALL_SUCCESS: {
       return articleAdapter.addAll(action.payload, state);
     }
 
 
-    case ArticlesActionsTypes.LOAD_SUCCESS : {
+    case ArticlesActionsTypes.LOAD_SUCCESS: {
       return articleAdapter.addOne(action.payload, state);
-      }
-    case ArticlesActionsTypes.CREATE_SUCCESS : {
+    }
+    case ArticlesActionsTypes.CREATE_SUCCESS: {
       return articleAdapter.addOne(action.payload, state);
     }
 
-    case ArticlesActionsTypes.REMOVE_SUCCESS : {
+    case ArticlesActionsTypes.REMOVE_SUCCESS: {
       return articleAdapter.removeOne(action.payload, state);
     }
 
@@ -44,3 +41,11 @@ export function reducer(
 
   }
 }
+
+
+export const getArticleById = (articleId: string) => (state: State) =>
+  state.entities[articleId];
+
+
+
+

@@ -7,7 +7,9 @@ import { Route, RouterModule } from '@angular/router';
 
 
 export const ROUTES: Route[] = [
-  {path: '', component: ArticlesIndexViewComponent}
+  {path: '',
+   component: ArticlesIndexViewComponent
+  }
 ];
 
 @NgModule({

@@ -1,4 +1,4 @@
-import {Action} from '@ngrx/store';
+import { Action } from '@ngrx/store';
 import { Article } from '../core/models/articles';
 
 export enum ArticlesActionsTypes {
@@ -26,51 +26,51 @@ export class LoadAll implements Action {
 
 export class Load implements Action {
   readonly type = ArticlesActionsTypes.LOAD;
-  constructor(public payload: string) {}
+  constructor(public payload: string) { }
 }
 
 export class Create implements Action {
   readonly type = ArticlesActionsTypes.CREATE;
-  constructor(public payload: Article) {}
+  constructor(public payload: Article) { }
 }
 
 
 export class Remove implements Action {
   readonly type = ArticlesActionsTypes.REMOVE;
-  constructor(public payload: string) {}
+  constructor(public payload: string) { }
 }
 
 export class LoadAllSuccess implements Action {
   readonly type = ArticlesActionsTypes.LOAD_ALL_SUCCESS;
-  constructor(public payload: Article[]) {}
+  constructor(public payload: Article[]) { }
 }
 
 export class LoadSuccess implements Action {
   readonly type = ArticlesActionsTypes.LOAD_SUCCESS;
-  constructor(public payload: Article) {}
+  constructor(public payload: Article) { }
 }
 
 export class CreateSuccess implements Action {
   readonly type = ArticlesActionsTypes.CREATE_SUCCESS;
-  constructor(public payload: Article) {}
+  constructor(public payload: Article) { }
 }
 
 
 
 export class RemoveSuccess implements Action {
   readonly type = ArticlesActionsTypes.REMOVE_SUCCESS;
-  constructor(public payload: string) {}
+  constructor(public payload: string) { }
 }
 
 
 
 export type Actions =
-    | LoadAll
-    | Load
-    | Create
-    | Remove
-    | LoadAllSuccess
-    | LoadSuccess
-    | CreateSuccess
-    | RemoveSuccess
-    ;
+  | LoadAll
+  | Load
+  | Create
+  | Remove
+  | LoadAllSuccess
+  | LoadSuccess
+  | CreateSuccess
+  | RemoveSuccess
+  ;

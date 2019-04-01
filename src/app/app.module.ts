@@ -3,18 +3,17 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { reducer } from './store/articles.reducer';
+import { MatListModule, MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule } from '@angular/material';
 
-import { EffectsModule, Actions} from '@ngrx/effects';
+import { EffectsModule, Actions } from '@ngrx/effects';
 import { ArticlesEffects } from './store/articles.effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import * as fromRoot from './store';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatSidenavModule} from '@angular/material';
-import {MatListModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { ArticlesIndexViewComponent } from './views/articles-index-view/articles-index-view.component';
-import {AppRoutingModule} from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +23,12 @@ import {AppRoutingModule} from './app-routing.module';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatListModule,
     AppRoutingModule,
     StoreModule.forRoot(fromRoot.reducers),
     EffectsModule.forRoot([ArticlesEffects]),
