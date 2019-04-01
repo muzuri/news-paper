@@ -1,14 +1,9 @@
 <p>
   LIst of All Articles
 </p>
-<!-- <pre>{{articles$ | async | json}}</pre> -->
-<p></p>
 <mat-list>
-  <mat-list-item *ngFor="let article of articles$ |async ">
-    <h3 matLine> {{article.title}}</h3>
-    <p matLine>{{article.content}}</p>
-  </mat-list-item>
-</mat-list>
-
-
+  <div
+   *ngFor="let article of articles$ | async ">
+      <app-article-details [article]="article"></app-article-details>
+    </div>
 <pre>{{article1$ | async | json}}</pre>

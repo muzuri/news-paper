@@ -19,7 +19,7 @@ export class ArticlesIndexViewComponent implements OnInit {
     this.store.dispatch(new articlesActions.LoadAll());
     this.articles$ = this.store.pipe(select(fromRoot.getAllArticles));
 
-    this.article1$ = this.store.pipe(select(fromRoot.getArtcileById('1')));
+    this.article1$ = this.store.pipe(select(fromRoot.getArtcileById('3')));
     //   });
     // }
 
