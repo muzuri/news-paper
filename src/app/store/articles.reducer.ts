@@ -9,11 +9,9 @@ export const articleAdapter = createEntityAdapter<Article>({
 
 
 export interface State extends EntityState<Article> {
-  // article: Article;
 }
 
 export const INIT_STATE: State = articleAdapter.getInitialState({
-  // article: undefined
 });
 
 
@@ -46,16 +44,6 @@ export function reducer(
   }
 }
 
-// it's a higher order functions first
-// receives an ID
-
-// then the State
-
-// pciks entities from State and returns an artilce
-
-// tell me when done,
-
-// we'll see the rest
 
 export const getArticleById = (articleId: string) => (state: State) =>
   state.entities[articleId];
