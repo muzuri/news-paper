@@ -1,8 +1,6 @@
 import { Article } from '../core/models/articles';
 import { EntityState, createEntityAdapter } from '@ngrx/entity';
 import { Actions, ArticlesActionsTypes, } from './articles.actions';
-import { state } from '@angular/animations';
-
 export const articleAdapter = createEntityAdapter<Article>({
 
 });
