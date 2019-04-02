@@ -1,5 +1,6 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
 import { Article } from '../../models/articles';
+
 
 
 @Component({
@@ -11,9 +12,15 @@ export class ArticleDetailsComponent implements OnInit {
 
  @Input()
  article: Article;
+//  @Output()
+//  articleSelected = new EventEmitter<Article>();
   constructor() { }
 
   ngOnInit() {
   }
+onArticleClicked() {
+  console.log('the app-article-details has been clicked ');
+  // this.articleSelected.emit(this.article);
+}
 
 }

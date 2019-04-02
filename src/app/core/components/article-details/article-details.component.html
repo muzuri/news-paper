@@ -1,7 +1,10 @@
 
 <mat-list>
     <mat-list-item>
-      <h3 matLine> {{article.title}}</h3>
-      <p matLine>{{article.content}}</p>
+
+      <h3 matLine (click)="onArticleClicked()"> {{article.title}}</h3>
+      <p matLine ><a [routerLink]="['/articles', article.id]">Home</a></p>
+      <p matLine >{{article.content}}</p>
     </mat-list-item>
   </mat-list>
+

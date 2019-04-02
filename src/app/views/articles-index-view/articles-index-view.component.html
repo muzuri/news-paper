@@ -4,12 +4,8 @@
 <mat-list>
   <div
    *ngFor="let article of articles$ | async ">
-      <app-article-details [article]="article"></app-article-details>
+      <app-article-details
+        [article]="article">
+      </app-article-details>
     </div>
 <pre>{{article1$ | async | json}}</pre>
-<p *ngFor="let article1 of article1$ | async">
-    <app-article-item [article1]="article1">
-
-      </app-article-item>
-
-</p>

@@ -24,4 +24,8 @@ export class ArticlesIndexViewComponent implements OnInit {
     // }
 
   }
+
+  articleSelected() {
+    console.log('the whole app has clicked');
+  }
 }
