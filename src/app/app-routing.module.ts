@@ -8,18 +8,18 @@ import { Route, RouterModule } from '@angular/router';
 
 
 export const ROUTES: Route[] =
-[
-  {
-    path: '',
-   component: ArticlesIndexViewComponent
-  },
+  [
+    {
+      path: '',
+      component: ArticlesIndexViewComponent
+    },
 
-  {
-    path: 'articles',
-    component: ArticleItemComponent
- }
-]
-;
+    {
+      path: 'articles:/id',
+      component: ArticleItemComponent
+    }
+  ]
+  ;
 
 @NgModule({
   imports: [

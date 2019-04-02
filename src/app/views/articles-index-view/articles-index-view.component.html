@@ -2,10 +2,8 @@
   LIst of All Articles
 </p>
 <mat-list>
-  <div
-   *ngFor="let article of articles$ | async ">
-      <app-article-details
-        [article]="article">
-      </app-article-details>
-    </div>
-<pre>{{article1$ | async | json}}</pre>
+  <div *ngFor="let article of articles$ | async ">
+    <app-article-details [article]="article">
+    </app-article-details>
+  </div>
+  <pre>{{article1$ | async | json}}</pre>
