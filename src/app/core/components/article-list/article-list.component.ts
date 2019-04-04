@@ -9,7 +9,7 @@ import { Article } from '../../models/articles';
 export class ArticleListComponent implements OnInit {
 
   @Input()
-  article: Article[];
+  article: Article;
   constructor() { }
 
   ngOnInit() {

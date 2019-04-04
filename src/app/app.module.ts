@@ -9,6 +9,7 @@ import { EffectsModule, Actions } from '@ngrx/effects';
 import { ArticlesEffects } from './store/articles.effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import * as fromRoot from './store';
+import { Route, RouterModule } from '@angular/router';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';

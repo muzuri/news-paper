@@ -7,27 +7,30 @@ import { Route, RouterModule } from '@angular/router';
 
 
 
-export const ROUTES: Route[] =
-  [
-    {
-      path: 'Home',
-      component: ArticlesIndexViewComponent,
-      children: [
-        {
-          path: 'articles',
-          component: ArticleViewListComponent
-        },
-        {
-          path: 'details',
-          component: ArticlesViewDetailsComponent
-      }
-      ]
-    }
-  ];
+export const ROUTES: Route[] = [
+ {
+   path: '',
+   pathMatch: 'full',
+   redirectTo: '/articles'
+ },
+ {
+   path: 'articles',
+   children: [
+     {
+       path: '',
+       component: ArticlesIndexViewComponent
+     },
+     {
+       path: ':articleId',
+       component: ArticleViewListComponent
+     }
+   ]
+ }
 
+];
 @NgModule({
   imports: [
-    RouterModule.forChild(ROUTES)
+    RouterModule.forRoot(ROUTES)
   ],
   exports: [RouterModule]
 })
