@@ -19,12 +19,7 @@ export class ArticlesViewDetailsComponent implements OnInit {
   ngOnInit() {
     const id: string = this.route.snapshot.paramMap.get('articleId');
     this.articleId = id;
-    // this.articleId = + id;
-    this.store.dispatch(new articlesActions.LoadAll());
     this.articles$ = this.store.pipe(select(fromRoot.getArtcileById(id)));
-    console.log(' this is the id ' + id);
-    // this.route.params.subscribe(params => console.log(params));
-
   }
 
 }
