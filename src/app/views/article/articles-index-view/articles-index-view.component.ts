@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import * as articlesActions from '../../store/articles.actions';
+import * as articlesActions from '../../../store/articles.actions';
 import { Observable } from 'rxjs';
-import { Article } from '../../core/models/articles';
-import * as fromRoot from '../../store';
-import { tap } from 'rxjs/operators';
+import { Article } from '../../../core/models/articles';
+import * as fromRoot from '../../../store';
 @Component({
   selector: 'app-articles-index-view',
   templateUrl: './articles-index-view.component.html',
@@ -20,9 +19,6 @@ export class ArticlesIndexViewComponent implements OnInit {
     this.articles$ = this.store.pipe(select(fromRoot.getAllArticles));
 
     this.article1$ = this.store.pipe(select(fromRoot.getArtcileById('3')));
-    //   });
-    // }
-
   }
 
   articleSelected() {

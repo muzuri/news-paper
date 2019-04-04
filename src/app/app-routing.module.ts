@@ -1,22 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ArticlesIndexViewComponent } from './views/articles-index-view/articles-index-view.component';
-import { ArticleItemComponent } from '../app/core/components/article-item/article-item.component';
-
+import { ArticlesIndexViewComponent } from './views/article/articles-index-view/articles-index-view.component';
 import { Route, RouterModule } from '@angular/router';
-
-
-
 export const ROUTES: Route[] =
   [
     {
       path: '',
       component: ArticlesIndexViewComponent
-    },
-
-    {
-      path: 'articles:/id',
-      component: ArticleItemComponent
     }
   ]
   ;
@@ -28,3 +17,4 @@ export const ROUTES: Route[] =
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

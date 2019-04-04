@@ -12,16 +12,22 @@ import * as fromRoot from './store';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-import { ArticlesIndexViewComponent } from './views/articles-index-view/articles-index-view.component';
+import { ArticlesIndexViewComponent } from './views/article/articles-index-view/articles-index-view.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ArticleDetailsComponent } from './core/components/article-details/article-details.component';
-import { ArticleItemComponent } from './core/components/article-item/article-item.component';
+import { ArticleListComponent } from './core/components/article-list/article-list.component';
+import { ArticleViewListComponent } from './views/article/article-view-list/article-view-list.component';
+import { ArticlesViewDetailsComponent } from './views/article/articles-view-details/articles-view-details.component';
+import {ArticleRoutingModule } from '../app/views/articles-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
     ArticlesIndexViewComponent,
     ArticleDetailsComponent,
-    ArticleItemComponent,
+    ArticleListComponent,
+    ArticleViewListComponent,
+    ArticlesViewDetailsComponent,
+    ArticleRoutingModule
   ],
   imports: [
     BrowserModule,
