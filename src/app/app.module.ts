@@ -18,7 +18,7 @@ import { ArticleDetailsComponent } from './core/components/article-details/artic
 import { ArticleListComponent } from './core/components/article-list/article-list.component';
 import { ArticleViewListComponent } from './views/article/article-view-list/article-view-list.component';
 import { ArticlesViewDetailsComponent } from './views/article/articles-view-details/articles-view-details.component';
-import {ArticleRoutingModule } from '../app/views/articles-routing.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +27,6 @@ import {ArticleRoutingModule } from '../app/views/articles-routing.module';
     ArticleListComponent,
     ArticleViewListComponent,
     ArticlesViewDetailsComponent,
-    ArticleRoutingModule
   ],
   imports: [
     BrowserModule,
