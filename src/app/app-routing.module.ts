@@ -22,7 +22,7 @@ export const ROUTES: Route[] = [
      },
      {
        path: ':articleId',
-       component: ArticleViewListComponent
+       component: ArticlesViewDetailsComponent
      }
    ]
  }
