@@ -1,7 +1,8 @@
 <p>
 you selected this {{articleId}}
-</p>
+<!-- </p>
 <div *ngFor="let article of articles$ | async | json ">
   <app-article-details [article]="article">
   </app-article-details>
-</div>
+</div> -->
+<pre>{{articles$ | async | json}}</pre>
