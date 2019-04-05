@@ -4,7 +4,8 @@ import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Article } from '../../../core/models/articles';
 import * as fromRoot from '../../../store';
-import { map, switchMap, tap } from 'rxjs/operators';
+import { map, switchMap, tap, startWith } from 'rxjs/operators';
+import * as ArticlesActions from '../../../store/articles.actions';
 @Component({
   selector: 'app-articles-view-details',
   templateUrl: './articles-view-details.component.html',
@@ -16,9 +17,7 @@ export class ArticlesViewDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private store: Store<fromRoot.State>) { }
 
   ngOnInit() {
-    // const id: string = this.route.snapshot.paramMap.get('articleId');
-    // this.articleId = id;
-    // this.articles$ = this.store.pipe(select(fromRoot.getArtcileById(id)));
+    this.store.dispatch(new ArticlesActions.LoadAll());
     this.articles$ = this.route.params.pipe(
       map(params => params.articleId),
       tap(id => this.articleId = id),
@@ -30,9 +29,3 @@ export class ArticlesViewDetailsComponent implements OnInit {
 
 }
 
-// {
-//   "id": "19",
-//   "createdAt": "2019-03-19T05:00:54.132Z",
-//   "title": "title 19",
-//   "content": "content 19"
-// }
