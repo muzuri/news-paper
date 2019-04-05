@@ -12,15 +12,9 @@ export class ArticleDetailsComponent implements OnInit {
 
   @Input()
   article: Article;
-  //  @Output()
-  //  articleSelected = new EventEmitter<Article>();
   constructor() { }
 
   ngOnInit() {
-  }
-  onArticleClicked() {
-    console.log('the app-article-details has been clicked ');
-    // this.articleSelected.emit(this.article);
   }
 
 }

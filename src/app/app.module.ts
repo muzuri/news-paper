@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
+import {ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { reducer } from './store/articles.reducer';
 import { MatListModule, MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule } from '@angular/material';
 
@@ -19,6 +20,8 @@ import { ArticleDetailsComponent } from './core/components/article-details/artic
 import { ArticleListComponent } from './core/components/article-list/article-list.component';
 import { ArticleViewListComponent } from './views/article/article-view-list/article-view-list.component';
 import { ArticlesViewDetailsComponent } from './views/article/articles-view-details/articles-view-details.component';
+import { ArticlFormComponent } from './core/components/articl-form/articl-form.component';
+import { ArticleNewComponent } from './views/article/article-new/article-new.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,8 @@ import { ArticlesViewDetailsComponent } from './views/article/articles-view-deta
     ArticleListComponent,
     ArticleViewListComponent,
     ArticlesViewDetailsComponent,
+    ArticlFormComponent,
+    ArticleNewComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +45,8 @@ import { ArticlesViewDetailsComponent } from './views/article/articles-view-deta
     MatToolbarModule,
     MatListModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
     StoreModule.forRoot(fromRoot.reducers),
     EffectsModule.forRoot([ArticlesEffects]),
     StoreDevtoolsModule.instrument(),

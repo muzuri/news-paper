@@ -1,9 +1,8 @@
+  <mat-list>
+    <mat-list-item>
 
-
-  <p>{{article.id}}</p>
-
-  <ul>
-    <li>{{article.title}}</li>
-    <li>{{article.content}}</li>
-  </ul>
-
+      <h3 matLine><a [routerLink]="['/articles', article.id]"> {{article.title}}</a></h3>
+      <!-- <p matLine><a [routerLink]="['/articles', article.id]">Home</a></p> -->
+      <p matLine>{{article.content}}</p>
+    </mat-list-item>
+  </mat-list>
