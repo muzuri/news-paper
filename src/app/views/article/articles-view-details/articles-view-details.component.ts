@@ -17,7 +17,7 @@ export class ArticlesViewDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private store: Store<fromRoot.State>) { }
 
   ngOnInit() {
-    this.store.dispatch(new ArticlesActions.LoadAll());
+    // this.store.dispatch(new ArticlesActions.LoadAll());
     this.articles$ = this.route.params.pipe(
       map(params => params.articleId),
       tap(id => this.articleId = id),

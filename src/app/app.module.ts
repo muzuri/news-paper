@@ -19,8 +19,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { ArticleDetailsComponent } from './core/components/article-details/article-details.component';
 import { ArticleListComponent } from './core/components/article-list/article-list.component';
 import { ArticlesViewDetailsComponent } from './views/article/articles-view-details/articles-view-details.component';
-import { ArticlFormComponent } from './core/components/articl-form/articl-form.component';
-import { ArticleNewComponent } from './views/article/article-new/article-new.component';
 
 @NgModule({
   declarations: [
@@ -29,8 +27,6 @@ import { ArticleNewComponent } from './views/article/article-new/article-new.com
     ArticleDetailsComponent,
     ArticleListComponent,
     ArticlesViewDetailsComponent,
-    ArticlFormComponent,
-    ArticleNewComponent,
   ],
   imports: [
     BrowserModule,

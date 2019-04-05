@@ -3,10 +3,6 @@ import { ArticlesIndexViewComponent } from './views/article/articles-index-view/
 import {ArticlesViewDetailsComponent} from './views/article/articles-view-details/articles-view-details.component';
 
 import { Route, RouterModule } from '@angular/router';
-import {ArticleNewComponent } from '../app/views/article/article-new/article-new.component';
-
-import { from } from 'rxjs';
-
 
 
 export const ROUTES: Route[] = [
