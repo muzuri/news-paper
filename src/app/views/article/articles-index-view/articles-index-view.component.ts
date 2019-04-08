@@ -10,8 +10,8 @@ import * as fromRoot from '../../../store';
   styleUrls: ['./articles-index-view.component.css']
 })
 export class ArticlesIndexViewComponent implements OnInit {
-   articles$: Observable<Article[]>;
-   article1$: Observable<Article>;
+  articles$: Observable<Article[]>;
+  article1$: Observable<Article>;
   constructor(private store: Store<fromRoot.State>) { }
 
   ngOnInit() {
