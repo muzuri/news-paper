@@ -22,7 +22,8 @@ export class ArticlesEffects {
 
   @Effect()
   loadAll$ = this.actions$.pipe(
-    ofType<ArticlesActions.LoadAll>(ArticlesActions.ArticlesActionsTypes.LOAD_ALL), /* When [Contacts] LOAD ALL action is dispatched */
+    startWith(new ArticlesActions.LoadAll()),
+    ofType<ArticlesActions.LoadAll>(ArticlesActions.ArticlesActionsTypes.LOAD_ALL),
     switchMap(() => this.articlesService.loadArticles().pipe(
       map(articles => new ArticlesActions.LoadAllSuccess(articles))
     )),

@@ -1,17 +1,31 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ArticlesIndexViewComponent } from './views/articles-index-view/articles-index-view.component';
+import { ArticlesIndexViewComponent } from './views/article/articles-index-view/articles-index-view.component';
+import { ArticlesViewDetailsComponent } from './views/article/articles-view-details/articles-view-details.component';
 
 import { Route, RouterModule } from '@angular/router';
 
 
-
 export const ROUTES: Route[] = [
-  {path: '',
-   component: ArticlesIndexViewComponent
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: '/articles'
+  },
+  {
+    path: 'articles',
+    children: [
+      {
+        path: '',
+        component: ArticlesIndexViewComponent
+      },
+      {
+        path: ':articleId',
+        component: ArticlesViewDetailsComponent
+      },
+    ]
   }
-];
 
+];
 @NgModule({
   imports: [
     RouterModule.forRoot(ROUTES)

@@ -1,0 +1,10 @@
+<ul *ngIf="article; else Notdefined">
+  <li>{{article.title}}</li>
+  <li>{{article.id}}</li>
+  <li>{{article.content}}</li>
+</ul>
+<ng-template #Notdefined>
+  <p>
+    Article Not defined
+  </p>
+</ng-template>
