@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { Article } from '../../../core/models/articles';
 import * as fromRoot from '../../../store';
 import { map, switchMap, tap, startWith } from 'rxjs/operators';
-import * as ArticlesActions from '../../../store/articles.actions';
+
 @Component({
   selector: 'app-articles-view-details',
   templateUrl: './articles-view-details.component.html',

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { ArticlesIndexViewComponent } from './views/article/articles-index-view/articles-index-view.component';
 import { ArticlesViewDetailsComponent } from './views/article/articles-view-details/articles-view-details.component';
+import { ArticleNewComponent } from './views/article/article-new/article-new.component';
 
 import { Route, RouterModule } from '@angular/router';
 
@@ -23,6 +24,10 @@ export const ROUTES: Route[] = [
         component: ArticlesViewDetailsComponent
       },
     ]
+  },
+  {
+    path: ':new',
+    component: ArticleNewComponent
   }
 
 ];

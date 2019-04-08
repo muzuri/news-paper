@@ -11,17 +11,20 @@ import * as fromRoot from '../../../store';
 })
 export class ArticlesIndexViewComponent implements OnInit {
   articles$: Observable<Article[]>;
-  article1$: Observable<Article>;
+  // article1$: Observable<Article>;
   constructor(private store: Store<fromRoot.State>) { }
 
   ngOnInit() {
     this.store.dispatch(new articlesActions.LoadAll());
     this.articles$ = this.store.pipe(select(fromRoot.getAllArticles));
 
-    this.article1$ = this.store.pipe(select(fromRoot.getArtcileById('3')));
+    // this.article1$ = this.store.pipe(select(fromRoot.getArtcileById('3')));
   }
 
   articleSelected() {
     console.log('the whole app has clicked');
+  }
+  delete(article: Article) {
+  this.store.dispatch(new articlesActions.Remove(article.id));
   }
 }
