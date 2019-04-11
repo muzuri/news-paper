@@ -5,7 +5,8 @@ import { StoreModule } from '@ngrx/store';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { reducer } from './store/articles.reducer';
 import { MatListModule, MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule } from '@angular/material';
-
+import {MatInputModule} from '@angular/material/input';
+import {MatSidenavModule} from '@angular/material';
 import { EffectsModule, Actions } from '@ngrx/effects';
 import { ArticlesEffects } from './store/articles.effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -19,6 +20,7 @@ import { ArticleListComponent } from './core/components/article-list/article-lis
 import { ArticlesViewDetailsComponent } from './views/article/articles-view-details/articles-view-details.component';
 import { ArticleFormComponent } from './core/components/article-form/article-form.component';
 import { ArticleNewComponent } from './views/article/article-new/article-new.component';
+import 'hammerjs';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { ArticleNewComponent } from './views/article/article-new/article-new.com
     MatIconModule,
     MatMenuModule,
     MatToolbarModule,
+    MatSidenavModule,
     MatListModule,
+    MatInputModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,

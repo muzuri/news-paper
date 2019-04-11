@@ -18,19 +18,19 @@ export class ArticleFormComponent implements OnInit {
   save = new EventEmitter<Article>();
 
   articleForm: FormGroup;
-  constructor(private formBuilder: FormBuilder) {
-    this.articleForm = formBuilder.group({
-      id: new FormControl(this.article.id, Validators.required),
-      title: new FormControl(this.article.title, Validators.required),
-      content: new FormControl(this.article.content, Validators.required)
+  constructor(private fb: FormBuilder) {
+    this.articleForm = fb.group({
+      // id: new FormControl(this.article.id, Validators.required),
+      title: [this.article.title, Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(10)])],
+      content: [this.article.content, Validators.compose([Validators.minLength(10), Validators.maxLength(500)])]
     });
   }
 
   ngOnInit() {
   }
   onSubmit() {
-  if (this.articleForm.valid) {
-    this.save.emit(this.articleForm.value);
-  }
+    if (this.articleForm.valid) {
+      this.save.emit(this.articleForm.value);
+    }
   }
 }

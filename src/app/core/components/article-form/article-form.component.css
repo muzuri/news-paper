@@ -1,0 +1,33 @@
+.formwidth {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+.fullwidth {
+  width: 100%;
+}
+.form-container{
+  display:block;
+  width: 90%;
+  padding: 2em;
+  margin: 2em auto;
+  background-color: #fff;
+}
+.alert{
+  background: #f2edda;
+  padding: 7px;
+  font-size: 0.9em;
+  margin-bottom:20px;
+  display:inline-block;
+  animation: 2s alertAnim forwards;
+
+
+}
+.botton{
+  margin-top: 3ren;
+}
+h1{
+  margin-bottom: 2rem;
+  font-weight: bold;
+  font-family: 'MUlti'
+}

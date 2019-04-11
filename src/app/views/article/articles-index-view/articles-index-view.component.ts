@@ -16,7 +16,8 @@ export class ArticlesIndexViewComponent implements OnInit {
 
   ngOnInit() {
     this.store.dispatch(new articlesActions.LoadAll());
-    this.articles$ = this.store.pipe(select(fromRoot.getAllArticles));
+    this.articles$ = this.store.pipe(
+      select(fromRoot.getAllArticles));
 
     // this.article1$ = this.store.pipe(select(fromRoot.getArtcileById('3')));
   }
@@ -27,4 +28,6 @@ export class ArticlesIndexViewComponent implements OnInit {
   delete(article: Article) {
   this.store.dispatch(new articlesActions.Remove(article.id));
   }
+  edit() {}
+  sidenav1() {}
 }

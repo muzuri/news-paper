@@ -16,7 +16,7 @@ export class ArticleNewComponent implements OnInit {
   ngOnInit() {
   }
   onSave(article: Article) {
-    console.log(article);
+    console.log(`this is the one ${article}`);
     this.store.dispatch(new ArticlesActions.Create(article));
 
   }

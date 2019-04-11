@@ -10,6 +10,7 @@ export class ArticleListComponent implements OnInit {
 
   @Input() article: Article;
   @Output() remove = new EventEmitter<Article>();
+  @Output() edit1 = new EventEmitter<Article>();
   constructor() { }
 
   ngOnInit() {
@@ -18,4 +19,11 @@ export class ArticleListComponent implements OnInit {
      this.remove.emit(article);
   }
 
+  edit(article: Article) {
+    this.edit1.emit(article);
+  }
+  sidenav() {
+    console.log('side nav clicked');
+  }
 }
+
