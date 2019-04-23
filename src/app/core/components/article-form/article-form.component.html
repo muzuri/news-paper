@@ -1,0 +1,65 @@
+<div *ngIf="!title; else forminfo">
+  <form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+    <div class="form-container">
+      <div class="row columns">
+        <label>
+          Title:
+          <input type="text" formControlName="title">
+        </label>
+        <br>
+        <label>
+          Content:
+          <input type="text" formControlName="content">
+        </label>
+
+        <input type="submit" class="button expanded" value="Submit form" [disabled]="!articleForm.valid">
+      </div>
+
+    </div>
+
+  </form>
+
+</div>
+
+<ng-template #forminfo>
+  <div class="form-container">
+    <div class="row columns">
+      <h1>{{article.title}}</h1>
+      <p>{{article.content}}</p>
+    </div>
+  </div>
+</ng-template>
+
+<!-- <form [formGroup]="articleForm">
+
+  <label>
+    Id:
+    <input type="text" formControlName="id">
+  </label>
+  <br>
+  <label>
+    Title:
+    <input type="text" formControlName="title">
+  </label>
+    <br>
+  <label>
+    Content:
+    <input type="text" formControlName="content">
+  </label>
+
+  <form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+    <button type="submit" [disabled]="!articleForm.valid">
+      Submit
+    </button> -->
+<!-- <form [formGroup]="articleForm" class="formwidth" (ngSubmit)="onSubmit()">
+
+      <mat-form-field class="fullwidth">
+        <input matInput type ="text" >
+      </mat-form-field>
+      <mat-form-field class="fullwidth">
+        <input matInput type ="text">
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!articleForm.valid">
+        Save
+      </button>
+      </form> -->
